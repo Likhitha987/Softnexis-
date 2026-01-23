@@ -1,0 +1,91 @@
+# Task 3: Synthesizing the Design to Gates
+
+##  Objective
+
+The objective of this task is to synthesize a Verilog hardware design into a gate-level representation using the concept of a **standard cell library**. This step bridges the gap between high-level RTL design and actual hardware implementation.
+
+---
+
+## Design Description
+
+In this task, a **1-bit Full Adder** is designed using synthesizable Verilog. The Full Adder performs the addition of two input bits along with a carry input and produces a sum and carry output.
+
+### Inputs
+
+* `A` – First input bit
+* `B` – Second input bit
+* `Cin` – Carry input
+
+### Outputs
+
+* `Sum` – Sum output
+* `Cout` – Carry output
+
+### Boolean Equations
+
+* **Sum** = A ⊕ B ⊕ Cin
+* **Cout** = (A · B) + (A · Cin) + (B · Cin)
+
+---
+
+##Project Files
+
+```
+Task-3-Synthesis/
+│
+├── full_adder.v        # RTL design (synthesizable Verilog)
+├── tb_full_adder.v     # Testbench for functional verification
+└── README.md           # Task documentation
+```
+
+---
+
+## 🧪 Functional Verification
+
+Before synthesis, the design is verified using a Verilog testbench.
+All possible input combinations of `A`, `B`, and `Cin` are applied to ensure correct `Sum` and `Cout` outputs.
+
+Simulation was performed using an **online Verilog simulator (EDA Playground)**.
+
+---
+
+## ⚙️ Synthesis Overview
+
+Synthesis is the process of converting RTL Verilog code into a **gate-level netlist** using components from a **standard cell library**.
+
+During synthesis:
+
+* High-level logic (`assign` statements) is mapped to logic gates such as:
+
+  * XOR
+  * AND
+  * OR
+* The output is a **netlist** consisting only of standard cell instances and their interconnections.
+* Timing analysis is performed based on the selected library and constraints.
+
+---
+
+## Key Learnings
+
+* Difference between **RTL design** and **gate-level netlists**
+* Understanding of **standard cell libraries**
+* Importance of writing **synthesis-friendly Verilog**
+* Verification before synthesis
+* Role of synthesis in the VLSI design flow
+
+---
+
+## Outcome
+
+* Successfully designed a synthesizable Full Adder
+* Verified correct functionality using a testbench
+* Understood how RTL logic maps to physical gates during synthesis
+
+---
+
+## Simulation Link
+https://www.edaplayground.com/x/ZDj9
+
+EDA Playground link used for simulation and verification:
+👉 *(Paste your EDA Playground link here)*
+
